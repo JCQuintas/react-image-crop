@@ -1,6 +1,6 @@
 {
-  "name": "react-image-crop",
-  "version": "6.0.18",
+  "name": "react-image-crop-stop-propagation",
+  "version": "0.0.1",
   "description": "A responsive image cropping tool for React",
   "repository": "https://github.com/DominicTobias/react-image-crop",
   "main": "dist/ReactCrop.js",
@@ -36,7 +36,7 @@
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.10.0",

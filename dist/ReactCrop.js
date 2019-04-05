@@ -312,6 +312,8 @@ var ReactCrop = function (_PureComponent) {
           disabled = _this$props.disabled;
 
 
+      e.stopPropagation();
+
       if (disabled) {
         return;
       }
@@ -363,6 +365,8 @@ var ReactCrop = function (_PureComponent) {
           onChange = _this$props2.onChange,
           useNaturalImageDimensions = _this$props2.useNaturalImageDimensions;
 
+
+      e.stopPropagation();
 
       if (e.target !== _this.imageRef) {
         return;
@@ -419,6 +423,8 @@ var ReactCrop = function (_PureComponent) {
           onDragStart = _this$props3.onDragStart;
 
 
+      e.stopPropagation();
+
       if (disabled) {
         return;
       }
@@ -428,6 +434,7 @@ var ReactCrop = function (_PureComponent) {
       }
 
       e.preventDefault(); // Stop drag selection.
+
       if (!_this.dragStarted) {
         _this.dragStarted = true;
         onDragStart();
@@ -497,13 +504,14 @@ var ReactCrop = function (_PureComponent) {
 
       if (nudged) {
         e.preventDefault(); // Stop drag selection.
+
         nextCrop.x = clamp(nextCrop.x, 0, 100 - nextCrop.width);
         nextCrop.y = clamp(nextCrop.y, 0, 100 - nextCrop.height);
 
         onChange(nextCrop, getPixelCrop(_this.imageRef, nextCrop, useNaturalImageDimensions));
         onComplete(nextCrop, getPixelCrop(_this.imageRef, nextCrop, useNaturalImageDimensions));
       }
-    }, _this.onDocMouseTouchEnd = function () {
+    }, _this.onDocMouseTouchEnd = function (e) {
       var _this$props5 = _this.props,
           crop = _this$props5.crop,
           disabled = _this$props5.disabled,
@@ -512,9 +520,13 @@ var ReactCrop = function (_PureComponent) {
           useNaturalImageDimensions = _this$props5.useNaturalImageDimensions;
 
 
+      e.stopPropagation();
+
       if (disabled) {
         return;
       }
+
+      e.stopPropagation();
 
       if (_this.mouseDownOnCrop) {
         _this.mouseDownOnCrop = false;
